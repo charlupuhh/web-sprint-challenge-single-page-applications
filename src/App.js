@@ -29,7 +29,14 @@ const initialFormErrors = {
 const initialDisabled = true
 
 
+
 const App = () => {
+
+  const history = useHistory();
+
+  const toForm = () => {
+      history.push('/pizza')
+  }
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -104,12 +111,14 @@ const App = () => {
 
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
+      console.log(valid)
       setDisabled(!valid);
     })
   }, [formValues])
 
   return (
     <div>
+      <button id="orderPizza" onClick={toForm}>Pizza!</button>
       <div>
         <Switch>
           <Route path='/pizza'>

@@ -98,11 +98,9 @@ const Form = (props) => {
                     </label>
 
                 </div>
-                {/* 🔥 DISABLE THE BUTTON */}
-                <button disabled={disabled}>submit</button>
+                <button id='submitBtn' disabled={disabled}>submit</button>
 
                 <div className='errors'>
-                {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
                     <div>{errors.username}</div>
                     <div>{errors.email}</div>
                     <div>{errors.civil}</div>

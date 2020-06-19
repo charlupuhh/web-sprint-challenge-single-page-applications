@@ -9,6 +9,9 @@ const formSchema = Yup.object().shape({
         .string()
         .oneOf(['Marinara', 'Alfredo', 'Pesto'])
         .required('Must select a sauce'),
+    toppings: Yup
+        .boolean()
+            .oneOf([true], 'asdf'),
     instructions: Yup
         .string()
         .min(0, 'xd')
